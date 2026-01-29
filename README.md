@@ -10,7 +10,7 @@ This implementation is based on the [verl](https://github.com/volcengine/verl) l
 
 Please use the following commands to set up the environment:
 
-```bash
+```
 # Install dependencies (vLLM, SGLang, Megatron-Core)
 bash ./scripts/install_vllm_sglang_mcore_0.7.sh
 
@@ -19,3 +19,12 @@ pip install --no-deps -e .
 
 # Ensure numpy compatibility
 pip install "numpy<2.0"
+```
+
+Training
+To start the training process (Joint Agentic Dynamic Optimization), run the following script:
+
+```
+bash run_without_debugger.sh
+```
+The training process utilizes PPO to optimize the shared parameters across the Planner and Executors, aggregating heterogeneous transitions into a Unified Experience Buffer.
